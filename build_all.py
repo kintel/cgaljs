@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from tools.build import build_component
 
 COMPONENTS = [

@@ -1,32 +1,43 @@
 import os
+import tarfile
 import urllib2
 
-DOWNLOADS_DIRECTORY = "downloads"
+def download(url, path):
+    filename = url.split('/')[-1]
+    file_path = os.path.join(path, filename)
+    print 'Downloading:%s to:%s' % tuple([url, file_path])
 
-def download_all(urls):
-    for url in urls:
-        download(url)
-
-
-def download(url, filename=None):
-
-    if filename is None:
-        filename = url.split('/')[-1]
-
-    filename = os.path.join(DOWNLOADS_DIRECTORY, filename)
-    print 'Downloading:%s to:%s' % tuple([url, filename])
-
-    if os.path.isfile(filename):
+    if os.path.isfile(file_path):
         print 'Already downloaded'
-        return
+        return file_path
 
-    if not os.path.exists(DOWNLOADS_DIRECTORY):
-        os.makedirs(DOWNLOADS_DIRECTORY)
+    if not os.path.exists(path):
+        os.makedirs(path)
 
     u = urllib2.urlopen(url)
-    localFile = open(filename, 'w')
+    localFile = open(file_path, 'w')
     localFile.write(u.read())
     localFile.close()
     print 'Download completed'
+    return file_path
+
+def untar(tar_file, dest_path):
+    # Check it actually needs to be unarchived
+    if not is_archive_file(tar_file):
+        return
+
+    if os.path.exists(dest_path):
+        print "Already unarchived. Clean if you want to get a fresh copy"
+        return
+
+    print "Unarchiving"
+    tar_file = tarfile.open(tar_file)
+    tar_file.extractall(dest_path)
+    print "Finished unarchiving"
+
+def is_archive_file(archive_path):
+    return archive_path.split('.')[-1] == 'bz2'
+
+
 
 
