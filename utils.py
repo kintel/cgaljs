@@ -13,10 +13,12 @@ def download(url, filename=None):
     if not os.path.exists(DOWNLOADS_DIRECTORY):
         os.makedirs(DOWNLOADS_DIRECTORY)
 
+    print 'Downloading:%s to:%s' % tuple([url, filename])
+
     u = urllib2.urlopen(url)
     localFile = open(filename, 'w')
     localFile.write(u.read())
     localFile.close()
+    print 'Download completed'
 
 
-download("ftp://ftp.gmplib.org/pub/gmp/gmp-5.1.1.tar.bz2")
