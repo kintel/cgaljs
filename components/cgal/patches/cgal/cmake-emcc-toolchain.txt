@@ -1,0 +1,26 @@
+# the name of the target operating system
+SET(CMAKE_SYSTEM_NAME Linux)
+
+# which C and C++ compiler to use
+SET(CMAKE_C_COMPILER   /home/marcosscriven/sources/emscripten/emcc)
+SET(CMAKE_CXX_COMPILER /home/marcosscriven/sources/emscripten/em++)
+SET(CMAKE_AR           /home/marcosscriven/sources/emscripten/emar)
+SET(CMAKE_RANLIB       /home/marcosscriven/sources/emscripten/emranlib)
+SET(CMAKE_C_FLAGS      -g)
+SET(CMAKE_CXX_FLAGS    -g)
+
+# here is the target environment located
+SET(CMAKE_FIND_ROOT_PATH  /home/marcosscriven/sources/emscripten/system/include )
+
+# adjust the default behaviour of the FIND_XXX() commands:
+# search headers and libraries in the target environment, search
+# programs in the host environment
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
+SET( GMP_RUN_RES "0" CACHE STRING "Result from TRY_RUN" FORCE)
+SET( GMP_RUN_RES__TRYRUN_OUTPUT "version=5.1.1" CACHE STRING "Output from TRY_RUN" FORCE)
+SET( MPFR_RUN_RES "0" CACHE STRING "Result from TRY_RUN" FORCE)
+SET( MPFR_RUN_RES__TRYRUN_OUTPUT "version=3.1.1" CACHE STRING "Output from TRY_RUN" FORCE)

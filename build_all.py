@@ -5,8 +5,8 @@ INCLUDES_DIR = 'includes'
 LIBS_DIR = 'libs'
 
 COMPONENTS = [
-    'boost',
-    'gmp',
+    #'boost',
+    #'gmp',
     'mpfr',
     'cgal',
 ]
