@@ -1,7 +1,7 @@
 cgaljs
 ======
 
-This is a project to aid porting CGAL code to Javascript using an amazing tool called [Emscripten](https://github.com/kripken/emscripten) 
+This is a project to aid porting [CGAL](http://www.cgal.org/) code to Javascript using an amazing tool called [Emscripten](https://github.com/kripken/emscripten) 
 
 To get started:
 
