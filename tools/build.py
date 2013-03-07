@@ -15,6 +15,7 @@ def build_component(name, includes_dir, libs_dir, working_dir=None):
     component =  __import__("components.%s.config" % name, fromlist="components")
     working_dir = prepare_directory(name, working_dir)
     source_dir = os.path.join(get_source_dir(working_dir), component.SOURCE_DIR)
+    component_dir = os.path.join("components", name)
 
     # Step 1 - Download
     download_tarballs(component.DOWNLOADS, working_dir)
@@ -27,7 +28,8 @@ def build_component(name, includes_dir, libs_dir, working_dir=None):
 
     # Step 3 - Configure
     try:
-        command = component.CONFIGURE_CMD.format(includes=os.path.abspath(includes_dir), libs=os.path.abspath(libs_dir))
+        command = component.CONFIGURE_CMD.format(includes=os.path.abspath(includes_dir), libs=os.path.abspath(libs_dir),
+                                                 component_dir=os.path.abspath(component_dir))
         call(command, cwd=source_dir, shell=True)
     except:
         pass

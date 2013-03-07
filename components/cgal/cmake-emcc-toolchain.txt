@@ -9,9 +9,6 @@ SET(CMAKE_RANLIB       emranlib)
 SET(CMAKE_C_FLAGS      -g)
 SET(CMAKE_CXX_FLAGS    -g)
 
-# here is the target environment located
-SET(CMAKE_FIND_ROOT_PATH  /home/marcosscriven/sources/emscripten/system/include )
-
 # adjust the default behaviour of the FIND_XXX() commands:
 # search headers and libraries in the target environment, search
 # programs in the host environment
