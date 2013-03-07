@@ -16,9 +16,12 @@ To get started:
 * You should find the generated libs in the libs dir, and includes for each dependency in the includes dir
 * In examples there's a simple test script you can run to demontrate the output running in NodeJS
 
-Issues:
+Issues & Limitation:
 
-* There is no way to tell Javascript how to round floating point ops, so currently non-simple CGAL kernals will likely produce assertion errors
-
+* This is only the CGAL core. The QT visualisation components have not been done.
+* There is no way to tell Javascript how to round floating point ops, so currently non-simple CGAL kernals will likely produce assertion errors (hence the need to patch FPU.h) 
+* It is *not* a Javascript library - only a tool to prepare the CGAL library and its dependencies for use with Emscripten
+* The dependency on Boost Thread has been removed (for obvious reasons)
+* Generated Javascript code is a little large. Experiment with -O2 and -O3 Emscripten optimisation settings)
 
 NB Emscripten Git revision at time of writing:230c0e80dfcd44870bec3254c399db430f6e1d98
