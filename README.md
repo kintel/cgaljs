@@ -3,6 +3,12 @@ cgaljs
 
 This is a project to aid porting [CGAL](http://www.cgal.org/) code to Javascript using an amazing tool called [Emscripten](https://github.com/kripken/emscripten) 
 
+Dependencies:
+
+* Emscripten (and all its requirements including Python, Clang, Java, and NodeJS)
+* Emscripten tools must be on the path
+* Linux build tools
+ 
 To get started:
 
 * Clone the Git repo
