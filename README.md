@@ -3,6 +3,7 @@ cgaljs
 
 This is a project to aid porting [CGAL](http://www.cgal.org/) code to Javascript using an amazing tool called [Emscripten](https://github.com/kripken/emscripten) 
 
+It includes an Emscripten build for [GMP](http://gmplib.org/) and [MPFR](http://www.mpfr.org/) (dependencies of CGAL), which may be of use in their own right.
 Dependencies:
 
 * Emscripten (and all its requirements including Python, Clang, Java, and NodeJS)
