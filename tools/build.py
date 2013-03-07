@@ -120,14 +120,3 @@ def patch_files(patches, source_dir, name):
         original_file = os.path.join(source_dir, patch['file'])
         patch_file = os.path.join('components', name, 'patches', patch['patch'])
         call(['patch', original_file, patch_file])
-
-
-
-
-
-
-
-
-
-
-
