@@ -21,7 +21,7 @@ def build_component(name, includes_dir, libs_dir, working_dir=None):
 
     # Step 2 - Patch source
     try:
-        pass
+        patch_files(component.SOURCE_PATCHES, source_dir, name)
     except:
         pass
 
@@ -32,13 +32,9 @@ def build_component(name, includes_dir, libs_dir, working_dir=None):
     except:
         pass
 
-    # Step 4 - Patch any generated config or headers
+    # Step 4 - Patch any generated config or headers (IE Anything that's not in the original tarball)
     try:
-        for patch in component.CONFIG_PATCHES:
-            original_file = os.path.join(source_dir, patch['file'])
-            patch_file = os.path.join('components', name, 'patches', patch['patch'])
-            call(['patch', original_file, patch_file])
-
+        patch_files(component.CONFIG_PATCHES, source_dir, name)
     except:
         pass
 
@@ -117,6 +113,13 @@ def copy_artifacts(artifacts, working_dir, includes_dir, libs_dir):
             shutil.copy(source, destination)
     except:
         print "Component did not produce any libs"
+
+
+def patch_files(patches, source_dir, name):
+    for patch in patches:
+        original_file = os.path.join(source_dir, patch['file'])
+        patch_file = os.path.join('components', name, 'patches', patch['patch'])
+        call(['patch', original_file, patch_file])
 
 
 

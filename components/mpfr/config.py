@@ -1,5 +1,3 @@
-import os
-
 NAME = 'mpfr'
 VERSION = '3.1.1'
 DOWNLOADS = ['http://www.mpfr.org/mpfr-current/mpfr-%s.tar.bz2' % VERSION]
@@ -14,11 +12,11 @@ CONFIG_PATCHES = [
 ]
 ARTIFACTS =  {
     'includes': [{
-                     'source':os.path.join('mpfr-%s' % VERSION, 'src'),
+                     'source':'mpfr-%s/src' % VERSION,
                      'name':'mpfr'
                  }],
     'libs': [{
-                 'source': os.path.join('mpfr-%s' % VERSION, 'src', '.libs', 'libmpfr.so'),
+                 'source': 'mpfr-%s/src/.libs/libmpfr.so' % VERSION,
                  'name':'libmpfr.so'
              }]
 }

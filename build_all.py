@@ -7,7 +7,7 @@ LIBS_DIR = 'libs'
 COMPONENTS = [
     #'boost',
     #'gmp',
-    'mpfr',
+    #'mpfr',
     'cgal',
 ]
 

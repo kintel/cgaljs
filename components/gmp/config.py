@@ -1,5 +1,3 @@
-import os
-
 NAME = 'gmp'
 VERSION = '5.1.1'
 DOWNLOADS = ['ftp://ftp.gmplib.org/pub/gmp/gmp-%s.tar.bz2' % VERSION]
@@ -18,7 +16,7 @@ ARTIFACTS =  {
                      'name':'gmp'
                  }],
     'libs': [{
-                     'source': os.path.join('gmp-%s' % VERSION, '.libs', 'libgmp.so'),
+                     'source': 'gmp-%s/.libs/libgmp.so' % VERSION,
                      'name':'libgmp.so'
                  }]
 }
