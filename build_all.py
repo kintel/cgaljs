@@ -12,9 +12,9 @@ if not os.path.exists(LIBS_DIR):
     os.makedirs(LIBS_DIR)
 
 COMPONENTS = [
-    'boost',
-    'gmp',
-    'mpfr',
+    #'boost',
+    #'gmp',
+    #'mpfr',
     'cgal',
 ]
 
