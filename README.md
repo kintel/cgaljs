@@ -6,14 +6,14 @@ This is a project to aid porting [CGAL](http://www.cgal.org/) code to Javascript
 It includes an Emscripten build for [GMP](http://gmplib.org/) and [MPFR](http://www.mpfr.org/) (dependencies of CGAL), which may be of use in their own right.
 
 Dependencies
-============
+------------
 
 * Emscripten (and all its requirements including Python, Clang, Java, and NodeJS)
 * Emscripten tools must be on the path
 * Linux build tools
  
 To get started
-==============
+--------------
 
 * Clone the Git repo
 * Run the build_all.py script
@@ -21,7 +21,7 @@ To get started
 * In examples there's a simple test script you can run to demontrate the output running in NodeJS
 
 Issues & Limitations
-====================
+--------------------
 
 * This is only the CGAL core. The QT visualisation components have not been done.
 * There is no way to tell Javascript how to round floating point ops, so currently non-simple CGAL kernals will likely produce assertion errors (hence the need to patch FPU.h) 
